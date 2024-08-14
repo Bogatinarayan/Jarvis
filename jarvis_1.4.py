@@ -46,7 +46,7 @@ def take_command():
 
 def search_google(query):
     try:
-        url = f"https://www.google.com/search?q={query}"
+        url = f"https://www.google.com/search?q=query}"
         res = requests.get(url)
         res.raise_for_status()
         soup = bs4.BeautifulSoup(res.text, "html.parser")
@@ -334,14 +334,14 @@ def good_morning_routine():
     speak("Good morning! Have a great day ahead.")
     current_time = datetime.datetime.now().strftime("%I:%M %p")
     speak(f"The current time is {current_time}.")
-    fetch_weather("Butwal", "1f824e5f2d0cfc5e79cb78476b4c4471") 
+    fetch_weather("Butwal", "") 
     play_latest_news()
 
 # Function to play the latest news
 def play_latest_news():
     speak("Fetching the latest news for you.", volume=0.5)  # Lower volume
     # Replace 'YOUR_API_KEY' with your actual API key
-    url = f"http://newsapi.org/v2/top-headlines?country=us&apiKey=773d70adc027421784ceb0ed14a77efb"
+    url = f"http://newsapi.org/v2/top-headlines?country=us&apiKey="
     response = requests.get(url)
     if response.status_code == 200:
         data = response.json()
